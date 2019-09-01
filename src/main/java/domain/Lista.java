@@ -9,6 +9,7 @@ public class Lista {
     private List<Postulante> postulantes;
     private int numeroLista;
     private String nombrePartido;
+    private int cantidadDeVotos;
 
 
 
@@ -20,7 +21,9 @@ public class Lista {
     }
 
 
-
+    public int getNumeroDeLista() {
+        return numeroLista;
+    }
 
     public void agregarPostulanteAListaPostulantes(String puesto, String nombre){
 
@@ -35,5 +38,55 @@ public class Lista {
 
     }
 
+    public void serVotado(){
+
+        this.cantidadDeVotos++;
+
+
+    }
+
+    public int getCantidadDeVotos() {
+        return cantidadDeVotos;
+    }
+
+    public void votarPostulante(String puesto){
+
+        for (Postulante any: postulantes) {
+
+            if (puesto == any.getCargo()){
+
+                any.serVotado();
+
+            }
+
+        }
+
+
+
+    }
+
+
+    public int getCantidadDeVotosDe(String cargoPostulante) {
+
+            int retorno = 0;
+
+
+            for (Postulante any: postulantes) {
+
+                if (cargoPostulante == any.getCargo()){
+
+                    retorno = any.getCantidadVotos();
+
+                }
+
+            }
+
+            return retorno;
+
+        }
+
+
 
 }
+
+

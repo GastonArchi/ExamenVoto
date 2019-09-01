@@ -11,6 +11,7 @@ public class Partido {
     private Boolean vigencia;
     private Lista unaLista;
     private List<Postulante> postulantes;
+    private boolean presencia;
 
 
     public Partido(String nombrePartido, LocalDate fecha, Boolean vigencia) {
@@ -18,6 +19,7 @@ public class Partido {
         this.fechaConformacion = fecha;
         this.vigencia = vigencia;
         this.postulantes = new ArrayList<>();
+        this.presencia = false;
     }
 
     public void volverVigente() {
@@ -26,6 +28,16 @@ public class Partido {
 
     public Boolean getVigencia() {
         return vigencia;
+    }
+
+    public Boolean getPresencia(){
+
+        return presencia;
+
+    }
+
+    public void setPresencia(boolean presencia) {
+        this.presencia = presencia;
     }
 
     public String getNombrePartido() {
@@ -53,5 +65,7 @@ public class Partido {
         unaEleccion.agregarLista(unaLista, unPartido);
 
     }
+
+
 
 }
