@@ -18,11 +18,6 @@ public class Votante {
         return edad;
     }
 
-    public boolean hasVotado(){
-
-        return this.getHaVotado();
-
-    }
 
     public void setHaVotado(boolean haVotado) {
         this.haVotado = haVotado;

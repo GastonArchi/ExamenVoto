@@ -42,6 +42,17 @@ public class Lista {
 
         this.cantidadDeVotos++;
 
+        votarTodosPostulantes();
+
+
+    }
+
+    public void votarTodosPostulantes(){
+
+        for (Postulante any : postulantes){
+
+            any.serVotado();
+        }
 
     }
 
@@ -53,7 +64,7 @@ public class Lista {
 
         for (Postulante any: postulantes) {
 
-            if (puesto == any.getCargo()){
+            if (puesto.equals(any.getCargo())){
 
                 any.serVotado();
 
@@ -73,7 +84,7 @@ public class Lista {
 
             for (Postulante any: postulantes) {
 
-                if (cargoPostulante == any.getCargo()){
+                if (cargoPostulante.equals(any.getCargo())){
 
                     retorno = any.getCantidadVotos();
 
